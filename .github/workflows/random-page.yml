@@ -1,7 +1,7 @@
 name: Get Random Notion Page
 
 on:
-  workflow_dispatch: # Allows manual triggering from a webhook
+  workflow_dispatch: # Allow manual or API-triggered runs
 
 jobs:
   run-script:
@@ -17,8 +17,7 @@ jobs:
         python-version: "3.9"
 
     - name: Install dependencies
-      run: |
-        pip install requests
+      run: pip install requests
 
     - name: Run Python script
       env:
