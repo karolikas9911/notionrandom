@@ -2,9 +2,10 @@
 import os
 import random
 import requests
+
 # Retrieve Notion credentials from environment variables
-NOTION_API_TOKEN = os.environ["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"]
-DATABASE_ID = os.environ["00e9501785f34494b3b9eefb6a86159c?v=6600027444d349b28e5378dfaeb5a988"]
+NOTION_API_TOKEN = os.environ["NOTION_API_TOKEN"]
+DATABASE_ID = os.environ["DATABASE_ID"]
 
 def get_random_page():
     headers = {
