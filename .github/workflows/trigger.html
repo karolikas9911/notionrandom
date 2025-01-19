@@ -10,7 +10,7 @@
             fetch("https://api.github.com/repos/karolikas9911/notionrandom/actions/workflows/trigger-random-page.yml/dispatches", {
                 method: "POST",
                 headers: {
-                    "Authorization": "Bearer YOUR_PERSONAL_ACCESS_TOKEN", /* Replace with your GitHub PAT */
+                    "Authorization": "Bearer ${{ secrets.PAT }}", /* Replace with your GitHub PAT */
                     "Accept": "application/vnd.github.v3+json",
                 },
                 body: JSON.stringify({ ref: "main" }),
