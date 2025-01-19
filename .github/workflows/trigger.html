@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trigger Random Page Workflow</title>
+</head>
+<body>
+    <button id="triggerButton">Get Random Notion Page</button>
+    <script>
+        document.getElementById("triggerButton").onclick = function () {
+            fetch("https://api.github.com/repos/karolikas9911/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/actions/workflows/random-page.yml/dispatches ", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer <your-personal-access-token>",
+                    "Accept": "application/vnd.github.v3+json",
+                },
+                body: JSON.stringify({ ref: "main" }),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert("Workflow triggered! Check GitHub Actions logs.");
+                    } else {
+                        alert("Failed to trigger workflow. See the console for details.");
+                        console.error(response);
+                    }
+                })
+                .catch((error) => console.error(error));
+        };
+    </script>
+</body>
+</html>
