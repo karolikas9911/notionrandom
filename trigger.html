@@ -21,6 +21,7 @@
                     } else {
                         alert("Failed to trigger workflow.");
                         console.error(response);
+                        response.text().then((text) => console.log("Response body:", text));
                     }
                 })
                 .catch((error) => console.error(error));
