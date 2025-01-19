@@ -1,4 +1,3 @@
-# main.py
 import os
 import random
 import requests
@@ -28,4 +27,4 @@ def get_random_page():
 
 if __name__ == "__main__":
     random_page_url = get_random_page()
-    print(random_page_url)  # Print the random page URL
+    print(random_page_url)  # Output the random page URL
