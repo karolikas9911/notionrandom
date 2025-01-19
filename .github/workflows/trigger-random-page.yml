@@ -15,7 +15,7 @@ jobs:
           const fetch = require("node-fetch");
 
           const response = await fetch(
-            "https://api.github.com/repos/notionrandom/actions/workflows/random-page.yml/dispatches",
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/random-page.yml/dispatches",
             {
               method: "POST",
               headers: {
