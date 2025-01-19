@@ -7,7 +7,7 @@
     <button id="triggerButton">Get Random Notion Page</button>
     <script>
         document.getElementById("triggerButton").onclick = function () {
-            fetch("https://api.github.com/repos/<owner>/<repo>/actions/workflows/trigger-random-page.yml/dispatches", {
+            fetch("https://api.github.com/repos/${{ github.repository }}/actions/workflows/trigger-random-page.yml/dispatches", {
                 method: "POST",
                 headers: {
                     "Accept": "application/vnd.github.v3+json", // No token here
