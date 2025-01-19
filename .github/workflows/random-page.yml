@@ -1,7 +1,7 @@
 name: Get Random Notion Page
 
 on:
-  workflow_dispatch: # Allows manual triggering from GitHub
+  workflow_dispatch: # Allows manual triggering from a webhook
 
 jobs:
   run-script:
@@ -29,5 +29,5 @@ jobs:
         URL=$(python main.py)
         echo "::set-output name=page_url::$URL"
 
-    - name: Print the random page URL
-      run: echo "Random page: ${{ steps.run_script.outputs.page_url }}"
+    - name: Output the random page URL
+      run: echo "Random page URL: ${{ steps.run_script.outputs.page_url }}"
