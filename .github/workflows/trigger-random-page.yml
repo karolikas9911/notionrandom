@@ -1,0 +1,32 @@
+name: Trigger Random Notion Page Workflow
+
+on:
+  workflow_dispatch: # Allow triggering from HTML or API
+
+jobs:
+  trigger-main:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Random Notion Page Workflow
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fetch = require("node-fetch");
+
+          const response = await fetch(
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/random-page.yml/dispatches",
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${{ secrets.PAT }}`,
+                Accept: "application/vnd.github.v3+json",
+              },
+              body: JSON.stringify({ ref: "main" }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`Failed to trigger workflow: ${response.status} ${response.statusText}`);
+          }
+          console.log("Random page workflow triggered successfully.");
