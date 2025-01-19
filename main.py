@@ -3,7 +3,6 @@ import os
 import random
 import requests
 
-# Retrieve Notion credentials from environment variables
 NOTION_API_TOKEN = os.environ["NOTION_API_TOKEN"]
 DATABASE_ID = os.environ["DATABASE_ID"]
 
@@ -29,4 +28,4 @@ def get_random_page():
 
 if __name__ == "__main__":
     random_page_url = get_random_page()
-    print(random_page_url)
+    print(random_page_url)  # Print the random page URL
