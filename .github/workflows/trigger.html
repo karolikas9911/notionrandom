@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trigger Workflow</title>
+    <title>Trigger Random Page Workflow</title>
 </head>
 <body>
-    <button id="triggerButton">Get Random Notion Page</button>
+    <button id="triggerButton">Trigger Random Page</button>
     <script>
         document.getElementById("triggerButton").onclick = function () {
-            fetch("https://api.github.com/repos/${{ github.repository }}/actions/workflows/trigger-random-page.yml/dispatches", {
+            fetch("https://karolikas9911.github.io/notionrandom/trigger-random-page", {
                 method: "POST",
                 headers: {
-                    "Accept": "application/vnd.github.v3+json", // No token here
+                    "Accept": "application/vnd.github.v3+json",
                 },
                 body: JSON.stringify({ ref: "main" }),
             })
