@@ -7,9 +7,10 @@
     <button id="triggerButton">Trigger Random Page</button>
     <script>
         document.getElementById("triggerButton").onclick = function () {
-            fetch("https://karolikas9911.github.io/notionrandom/trigger-random-page", {
+            fetch("https://api.github.com/repos/karolikas9911/notionrandom/actions/workflows/trigger-random-page.yml/dispatches", {
                 method: "POST",
                 headers: {
+                    "Authorization": "Bearer YOUR_PERSONAL_ACCESS_TOKEN", /* Replace with your GitHub PAT */
                     "Accept": "application/vnd.github.v3+json",
                 },
                 body: JSON.stringify({ ref: "main" }),
